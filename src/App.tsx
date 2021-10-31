@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { ChangeEvent,Component } from 'react';
 
 import styled from '@emotion/styled';
 
@@ -15,7 +15,7 @@ class App extends Component {
     todoList:[]
   }
 
-  inputChangeHandler = (event:any)=>{
+  inputChangeHandler = (event:ChangeEvent<{ value: string }>)=>{
     this.setState({text:event.target.value})
   }
 
