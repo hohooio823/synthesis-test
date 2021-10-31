@@ -32,7 +32,7 @@ class List extends Component<ListProps> {
           {this.props.header}
         </Header>
         <Container>
-          {this.props.elements.map( element => <Element>element</Element> )}
+          {this.props.elements.map( (element,index) => <Element key={index}>{element}</Element> )}
         </Container>
       </Card>
     );
