@@ -26,7 +26,7 @@ class Button extends Component<ButtonProps> {
     const Button = styled.button`
         background-color:${this.colors[type].color};
         color:${this.colors.text};
-        width:${block!==true?"auto":"100%"};
+        width:${block!==true?"fit-content":"100%"};
         &:hover {
             background-color:${this.colors[type].hovered};
         }
