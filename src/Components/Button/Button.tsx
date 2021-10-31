@@ -27,6 +27,10 @@ class Button extends Component<ButtonProps> {
         background-color:${this.colors[type].color};
         color:${this.colors.text};
         width:${block!==true?"fit-content":"100%"};
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         &:hover {
             background-color:${this.colors[type].hovered};
         }
