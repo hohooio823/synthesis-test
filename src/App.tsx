@@ -9,6 +9,21 @@ import List from './Components/List/List';
 
 
 class App extends Component {
+  
+  state={
+    text:"",
+    todoList:[]
+  }
+
+  inputChangeHandler = (event:any)=>{
+    this.setState({text:event.target.value})
+  }
+
+  buttonClickHandler = ()=>{
+    this.setState({todoList:[...this.state.todoList,this.state.text]})
+    this.setState({text:""})
+  }
+
   render() {
     const Container = styled.div`
       display:flex;
@@ -19,10 +34,10 @@ class App extends Component {
     return (
       <div>
          <Container>
-            <Input placeholder={'Add your todo item'} />
-            <Button type="primary">Click me!</Button>
+            <Input placeholder={'Add your todo item'} value={this.state.text} onChange={this.inputChangeHandler}/>
+            <Button type="primary" onClick={this.buttonClickHandler}>Click me!</Button>
          </Container>
-         <List header="Some title" elements={["element1", "element2", "element3"]} />
+         <List header="Some title" elements={this.state.todoList} />
       </div>
     );
   }

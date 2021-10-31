@@ -7,7 +7,7 @@ import  InputProps  from './InputProps';
 
 class Input extends Component<InputProps> {
   render() {
-    const placeholder = this.props.placeholder;
+    const {className, placeholder, value, onChange} = this.props;
     
     const Input = styled.input`
       width:50vw;
@@ -20,7 +20,7 @@ class Input extends Component<InputProps> {
         color: light gray;}
     `
     return (
-      <Input className={this.props.className} placeholder={placeholder} type="text" onChange={this.props.onChange} />
+      <Input className={className} placeholder={placeholder} value={value} type="text" autoFocus onChange={onChange} />
     );
   }
 }

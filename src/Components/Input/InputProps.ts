@@ -1,5 +1,6 @@
 export default interface InputProps {
     className?: string;
     placeholder: string;
-    onChange?: () => void;
+    value?: string;
+    onChange?: (event:any) => void;
 }
